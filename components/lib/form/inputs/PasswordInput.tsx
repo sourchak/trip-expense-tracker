@@ -6,10 +6,12 @@ import {
   useState
 } from "react";
 
-import styles from "@/components/ui/lib/form/inputs/inputs.module.css";
+import styles from "@/components/lib/form/inputs/inputs.module.css";
+import Image from "next/image";
 
-export default function TextInput(
+export default function PasswordInput(
   props: {
+    showInputOnly?: boolean;
     label?: string;
     name?: string;
     placeholder?: string;
@@ -53,6 +55,7 @@ export default function TextInput(
     )
 ) {
   const {
+    showInputOnly,
     label,
     name,
     placeholder,
@@ -65,9 +68,11 @@ export default function TextInput(
     validate
   } = props;
 
-  const [text, setText] = useState<string>(
-    value || ""
-  );
+  const [password, setPassword] =
+    useState<string>(value || "");
+
+  const [showPassword, setShowPassword] =
+    useState<boolean>(false);
 
   const [hasChanged, setHasChanged] =
     useState<boolean>(false);
@@ -147,7 +152,7 @@ export default function TextInput(
       validate &&
       !validate(value.trim());
 
-    setText(value);
+    setPassword(value);
 
     if (
       requiredErr ||
@@ -171,12 +176,12 @@ export default function TextInput(
   };
 
   useEffect(() => {
-    onChange(text.trim());
-  }, [text]);
+    onChange(password.trim());
+  }, [password]);
 
   useEffect(() => {
     if (doReset) {
-      setText("");
+      setPassword("");
       setHasChanged(false);
       setError(false);
       setErrMessage("");
@@ -184,32 +189,61 @@ export default function TextInput(
   }, [doReset]);
 
   return (
-    <label className={styles.container}>
-      {(label || isRequired) && (
-        <span className={styles.labelContainer}>
-          <span className={styles.label}>
-            {label}
-          </span>
-          {isRequired && (
-            <span className={styles.required}>
-              *
+    <label
+      className={styles.container}
+      style={
+        showInputOnly
+          ? {
+              gridTemplateRows: "1fr",
+              height: "5rem"
+            }
+          : {}
+      }
+    >
+      {!showInputOnly &&
+        (label || isRequired) && (
+          <span className={styles.labelContainer}>
+            <span className={styles.label}>
+              {label}
             </span>
-          )}
-        </span>
-      )}
+            {isRequired && (
+              <span className={styles.required}>
+                *
+              </span>
+            )}
+          </span>
+        )}
       <div
-        className={`${styles.inputContainer} ${hasChanged ? (error ? styles.error : styles.ok) : ""}`}
+        className={`
+          ${styles.inputContainer} 
+          ${styles.passwordInputContainer} 
+          ${hasChanged ? (error ? styles.error : styles.ok) : ""}
+        `}
       >
         <input
           className={styles.input}
-          type="text"
+          type={
+            showPassword ? "text" : "password"
+          }
           name={name || "textInput"}
           placeholder={placeholder || ""}
-          value={text}
+          autoComplete="off"
+          spellCheck="false"
+          value={password}
           onChange={handleChange}
         />
+        <Image
+          className={styles.eyeIcon}
+          onClick={() => {
+            setShowPassword(!showPassword);
+          }}
+          src={`/icons/eye-${showPassword ? "close" : "open"}-icon.svg`}
+          alt={`Eye ${showPassword ? "Close" : "Open"} Icon`}
+          width={20}
+          height={20}
+        />
       </div>
-      {hasChanged && error && (
+      {!showInputOnly && hasChanged && error && (
         <span className={styles.errorMessage}>
           {errMessage}
         </span>

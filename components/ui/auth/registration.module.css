@@ -1,0 +1,142 @@
+.container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+}
+
+.verification {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+
+  width: 100%;
+
+  padding: 2.5rem;
+}
+
+.registration {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+
+  width: 100%;
+
+  padding: 2.5rem;
+}
+
+.heading {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.form {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  width: 100%;
+
+  padding: 1rem 0;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+
+  width: 100%;
+}
+
+.toForgotPassword {
+  width: 100%;
+
+  color: rgba(133, 80, 201, 0.75);
+
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  width: 100%;
+}
+
+.toLoginContainer {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-end;
+  gap: 0.5rem;
+
+  width: 100%;
+}
+
+.toLoginPrefix {
+  color: rgba(0, 0, 0, 0.8);
+
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.toLogin {
+  color: #6d2faa;
+
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 5rem;
+
+  border: none;
+  border-radius: 1rem;
+
+  background-color: rgba(140, 80, 201, 0.9);
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition: background-color 250ms ease;
+}
+
+.btn:hover {
+  background-color: rgba(140, 80, 201, 1);
+}
+
+.btnLabel {
+  width: 100%;
+
+  color: rgba(255, 255, 255, 1);
+
+  font-size: 1.75rem;
+  font-weight: 700;
+  text-align: center;
+
+  user-select: none;
+}

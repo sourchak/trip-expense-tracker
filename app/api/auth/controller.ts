@@ -31,14 +31,14 @@ ${error}`);
 }
 
 export async function readUser({
-  username,
+  mobileNo,
   password
 }: Partial<UserDocument>): Promise<UserDocument | null> {
   try {
     await connectDB();
 
     const user = await Users.findOne({
-      username,
+      mobileNo,
       password
     });
 

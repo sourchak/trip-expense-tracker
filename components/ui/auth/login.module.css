@@ -7,16 +7,21 @@
   height: 100%;
 }
 
-.homepage {
+.login {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 2rem;
 
   width: 100%;
-  height: 60%;
 
   padding: 2.5rem;
+}
+
+.heading {
+  font-size: 2rem;
+  font-weight: 700;
 }
 
 .icon {
@@ -26,33 +31,73 @@
   user-select: none;
 }
 
-.content {
+.form {
   flex: 1;
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 2.5rem;
+  gap: 1rem;
+
+  width: 100%;
+
+  padding: 1rem 0;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
 
   width: 100%;
 }
 
-.heading {
-  color: rgba(0, 0, 0, 0.85);
+.toForgotPassword {
+  width: 100%;
 
-  font-size: 2rem;
-  font-weight: 700;
+  color: rgba(133, 80, 201, 0.75);
 
-  user-select: none;
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-decoration: none;
 }
 
-.description {
-  font-size: 1.5rem;
-  font-weight: 500;
-  text-align: center;
+.actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 
-  user-select: none;
+  width: 100%;
+}
+
+.toRegistrationContainer {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-end;
+  gap: 0.5rem;
+
+  width: 100%;
+}
+
+.toRegistrationPrefix {
+  color: rgba(0, 0, 0, 0.8);
+
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.toRegistration {
+  color: #6d2faa;
+
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: capitalize;
 }
 
 .btn {
@@ -63,6 +108,7 @@
   width: 100%;
   height: 5rem;
 
+  border: none;
   border-radius: 1rem;
 
   background-color: rgba(140, 80, 201, 0.9);

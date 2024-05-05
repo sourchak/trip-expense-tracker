@@ -9,7 +9,8 @@ import {
 // types
 // document type (row) [typescript]
 export interface UserDocument extends Document {
-  username: string;
+  mobileNo: number;
+  name: string;
   password: string;
   createdAt: Date;
   updatedAt: Date;
@@ -25,10 +26,14 @@ export const userSchema = new Schema<
   UserModel
 >(
   {
-    username: {
-      type: String,
+    mobileNo: {
+      type: Number,
       required: true,
       unique: true
+    },
+    name: {
+      type: String,
+      required: true
     },
     password: {
       type: String,
