@@ -1,0 +1,61 @@
+.container {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  width: 100%;
+
+  border-radius: 1.5rem;
+  box-shadow: 0 0 1rem #00007777;
+
+  cursor: pointer;
+}
+
+.disabled {
+  pointer-events: none;
+}
+
+.error {
+  box-shadow: 0 0 1rem #77000077;
+}
+
+.ok {
+  box-shadow: 0 0 1rem #00770077;
+}
+
+.icon {
+  position: absolute;
+  right: 20%;
+
+  opacity: 1;
+  pointer-events: none;
+
+  transition: opacity 250ms ease-out;
+}
+
+.disabled .icon {
+  opacity: 0.5;
+}
+
+.button {
+  width: 100%;
+  height: 4rem;
+
+  border: none;
+  border-radius: 1.5rem;
+
+  font-size: 1.75rem;
+  font-variant: small-caps;
+  text-decoration: underline;
+
+  cursor: pointer;
+
+  transition: color 250ms ease-out;
+}
+
+.disabled .button {
+  color: #00000077;
+}

@@ -7,3 +7,48 @@
 html {
   font-size: 62.5%;
 }
+
+body {
+  position: relative;
+
+  max-width: 36rem;
+  height: 100svh;
+
+  margin: 0 auto;
+
+  box-shadow: 0 0 1rem #000000;
+
+  background-color: rgba(238, 238, 238, 1);
+
+  overflow: hidden;
+}
+
+body::before {
+  content: "";
+
+  position: absolute;
+  top: -10rem;
+  left: 0;
+
+  width: 20rem;
+  height: 20rem;
+
+  border-radius: 50%;
+
+  background-color: rgba(174, 143, 225, 0.44);
+}
+
+body::after {
+  content: "";
+
+  position: absolute;
+  top: -3rem;
+  left: -10rem;
+
+  width: 20rem;
+  height: 20rem;
+
+  border-radius: 50%;
+
+  background-color: rgba(174, 143, 225, 0.44);
+}

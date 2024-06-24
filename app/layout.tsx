@@ -1,17 +1,27 @@
 import type { Metadata } from "next";
-import { Play } from "next/font/google";
+import { Poppins } from "next/font/google";
 import "./globals.css";
 
-const play = Play({
-  weight: ["400", "700"],
+const poppins = Poppins({
+  weight: [
+    "100",
+    "200",
+    "300",
+    "400",
+    "500",
+    "600",
+    "700",
+    "800",
+    "900"
+  ],
   preload: true,
   fallback: ["sans-serif"],
   subsets: ["latin"]
 });
 
 export const metadata: Metadata = {
-  title: "Trip Expense Tracker",
-  description: "Manage trip expenses and more"
+  title: "Tripping",
+  description: "To Manage Your Trip"
 };
 
 export default function RootLayout({
@@ -21,7 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={play.className}>
+      <body className={poppins.className}>
         {children}
       </body>
     </html>

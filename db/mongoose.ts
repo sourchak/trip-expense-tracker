@@ -33,7 +33,7 @@ const connectDB = async (): Promise<void> => {
           "Error connecting to MongoDB:",
           error
         );
-        // process.exit();
+        process.exit();
       });
   }
 };
